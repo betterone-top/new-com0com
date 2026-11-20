@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- setupc: drop-in replacement for the original com0com setupc.exe (same commands, options and output). -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>setupc</AssemblyName>
+    <RootNamespace>Com0com.Setupc</RootNamespace>
+    <ApplicationManifest>..\asInvoker.manifest</ApplicationManifest>
+    <ApplicationIcon>..\setupc.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Com0com.Core\Com0com.Core.csproj" />
+    <None Include="..\..\driver\*" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,21 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <!-- SetupAPI driver operations fail under WOW64, so build 64-bit only -->
+    <PlatformTarget>x64</PlatformTarget>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <!-- Version = build time in UTC: year.month.day.HHmm without leading zeros
+         (e.g. 26.11.20.1526, 26.1.5.930). build.ps1 passes one stamp (-p:Version=...) to every
+         project and the installer; a plain dotnet build uses the current UTC time. -->
+    <Version Condition="'$(Version)' == ''">$([System.DateTime]::UtcNow.ToString('yy.M.d')).$([MSBuild]::Add($([MSBuild]::Multiply($([System.DateTime]::UtcNow.Hour), 100)), $([System.DateTime]::UtcNow.Minute)))</Version>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <Authors>Big Mouse</Authors>
+    <Company>Big Mouse</Company>
+    <Product>NewVirtualCOMPair</Product>
+    <Copyright>Copyright (c) 2026 Big Mouse. Based on com0com by Vyacheslav Frolov. GPLv3+</Copyright>
+  </PropertyGroup>
+</Project>

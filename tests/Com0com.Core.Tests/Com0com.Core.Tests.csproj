@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Dependency-free test runner: dotnet run, project tests/Com0com.Core.Tests (no admin needed). -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Com0com.Core\Com0com.Core.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,17 @@
+# Normalize line endings; Windows-only project, so check out text files with CRLF.
+* text=auto eol=crlf
+
+# Shell/Python scripts keep LF.
+*.sh text eol=lf
+*.py text eol=lf
+
+# Binary files: never touch.
+*.sys binary
+*.cat binary
+*.ico binary
+*.png binary
+*.exe binary
+*.dll binary
+
+# Signed driver package: the catalog (com0com.cat) hashes these files byte for byte.
+driver/** binary

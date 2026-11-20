@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- setupcn: command line tool with the new (noun verb) syntax. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>setupcn</AssemblyName>
+    <RootNamespace>Com0com.Cli</RootNamespace>
+    <ApplicationManifest>..\asInvoker.manifest</ApplicationManifest>
+    <ApplicationIcon>..\setupcn.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Com0com.Core\Com0com.Core.csproj" />
+    <None Include="..\..\driver\*" Link="%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

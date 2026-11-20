@@ -1,0 +1,19 @@
+# build output
+bin/
+obj/
+dist/
+release/
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# local test results (contain machine-specific paths and device ids)
+tools/*.log
+*.log
+
+# original CVS/RCS repository (the extracted sources are in src_orig/)
+/com0com/
